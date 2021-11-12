@@ -174,13 +174,13 @@ def scrape_pbp(v2_dict):
 
     clean_df = pbp_v2_df
 
-    print(
-        clean_df[clean_df["player1_team_abbreviation"] == home_team_abbrev][
-            "player1_team_id"
-        ]
-        .astype(int)
-        .unique()
-    )
+    # print(
+    #     clean_df[clean_df["player1_team_abbreviation"] == home_team_abbrev][
+    #         "player1_team_id"
+    #     ]
+    #     .astype(int)
+    #     .unique()
+    # )
     # code to properly get the team ids as the scientific notation cuts off some digits
     clean_df.loc[:, "home_team_id"] = (
         clean_df[clean_df["player1_team_abbreviation"] == home_team_abbrev][

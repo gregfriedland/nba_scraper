@@ -68,12 +68,12 @@ def get_team_ids(pbp_df):
     """
 
     team_ids = pbp_df["tid"].unique()
-    print(team_ids)
+    # print(team_ids)
     team_ids = [t for t in team_ids if t > 0]
     team_url = f"https://stats.wnba.com/stats/teamdetails?TeamID={team_ids[0]}"
     team_data = requests.get(team_url, headers=USER_AGENT)
     team_data = json.loads(team_data.text)
-    print(team_data)
+    # print(team_data)
 
     if (
         pbp_df["home_team_abbrev"].unique()[0]
